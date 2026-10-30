@@ -2,6 +2,8 @@
 
 用于管理课程、记录学习时长、安排学习计划和提醒。页面提供键盘操作、焦点提示和中文朗读开关。
 
+[下载 Windows 可运行版](https://github.com/Paisleyyy7/study-course-manager-accessible/releases/download/v1.0.0/study-course-manager-windows.zip)
+
 ## 在 Windows 上运行
 
 下载完整项目并解压，双击“启动系统.bat”。项目附带 Windows x64 版 Node.js 运行环境，无需安装依赖。启动地址为 http://127.0.0.1:3010 。关闭时双击“停止系统.bat”。
