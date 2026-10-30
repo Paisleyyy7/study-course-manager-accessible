@@ -1,0 +1,30 @@
+/* Default page layout, colours and content remain in styles.css. */
+.a11y-proof-image { display: block; max-width: 100%; max-height: 70vh; margin: 12px auto 0; object-fit: contain; }
+.a11y-sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip-path: inset(50%) !important; white-space: nowrap !important; border: 0 !important; }
+.a11y-skip { position: fixed; left: 12px; top: 8px; transform: translateY(-200%); z-index: 2147483647; padding: 8px 16px; color: #fff; background: #163f68; }
+.a11y-skip:focus { transform: none; }
+:where(button,a,input,select,textarea,[tabindex]):focus-visible { outline: 3px solid #163f68; outline-offset: 3px; }
+.topbar :focus-visible { outline-color: #fff; }
+@media (prefers-contrast: more) {
+  .tag { color: #263443; border: 1px solid currentColor; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (forced-colors: active) {
+  :root { --blue: LinkText; --blue-dark: CanvasText; --blue-pale: Canvas; --border: CanvasText; --text: CanvasText; --muted: CanvasText; --bg: Canvas; --red: CanvasText; --green: CanvasText; }
+  body, .topbar, .sidebar, .main, .panel, .stat-card, .auth-card, dialog, .date-picker, .ai-chat-panel, .plan-card, .ai-chat-message { background: Canvas !important; color: CanvasText !important; box-shadow: none !important; }
+  button, input, select, textarea, .tag, dialog, .date-picker, .ai-chat-panel, .panel, .plan-card { border: 1px solid ButtonText !important; }
+  button { background: ButtonFace !important; color: ButtonText !important; }
+  button:disabled { color: GrayText !important; border-color: GrayText !important; opacity: 1 !important; }
+  .nav-button.active, .auth-tab.active, .plan-tab.active, .calendar-day.selected, button[aria-pressed="true"] { forced-color-adjust: none; color: HighlightText !important; background: Highlight !important; border-color: Highlight !important; }
+  .calendar-day.today { outline: 1px dashed CanvasText; outline-offset: -3px; }
+  .progress-track, .plan-progress { border: 1px solid CanvasText; background: Canvas !important; }
+  .progress-fill, .plan-progress-fill { forced-color-adjust: none; background: Highlight !important; }
+  .weekly-chart text { fill: CanvasText !important; }
+  .weekly-chart line { stroke: CanvasText !important; }
+  .weekly-chart rect { fill: Highlight !important; }
+  :where(button,a,input,select,textarea,[tabindex]):focus-visible { outline: 3px solid Highlight !important; outline-offset: 3px; box-shadow: none !important; }
+  .a11y-skip { background: Canvas !important; color: LinkText !important; border: 1px solid LinkText; }
+  dialog::backdrop { background: Canvas; opacity: .7; }
+}

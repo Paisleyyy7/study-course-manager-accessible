@@ -1,0 +1,11 @@
+{
+  "name": "study-course-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "学习计划与课程管理系统",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/api.test.js tests/demo-data.test.js tests/recent-week.test.js tests/plans.test.js"
+  },
+  "engines": { "node": ">=24.0.0" }
+}

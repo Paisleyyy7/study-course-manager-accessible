@@ -1,0 +1,6 @@
+{
+  "provider": "DeepSeek",
+  "apiUrl": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-flash",
+  "apiKey": ""
+}

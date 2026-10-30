@@ -1,0 +1,10 @@
+.page-reader { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.page-reader button { font-size: 13px; white-space: nowrap; }
+.reader-toggle[aria-checked="true"] { font-weight: 600; }
+.topbar .reader-toggle[aria-checked="true"] { background: #ffffff20; border-color: #fff; }
+.auth-header:has(.page-reader) { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.auth-header .page-reader .text-btn { border: 1px solid var(--border); padding: 6px 12px; }
+@media (forced-colors: active) {
+  .page-reader button { border: 1px solid ButtonText !important; }
+  .reader-toggle[aria-checked="true"] { forced-color-adjust: none; background: Highlight !important; color: HighlightText !important; }
+}

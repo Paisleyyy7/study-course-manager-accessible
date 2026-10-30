@@ -1,0 +1,2 @@
+/* Hide only the description beneath a course title; retain its stored value. */
+#course-table tbody td:first-child > .cell-subtitle { display: none; }
