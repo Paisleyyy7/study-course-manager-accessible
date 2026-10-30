@@ -2,7 +2,7 @@
 
 用于管理课程、记录学习时长、安排学习计划和提醒。页面提供键盘操作、焦点提示和中文朗读开关。
 
-[下载 Windows 可运行版](https://github.com/Paisleyyy7/study-course-manager-accessible/releases/download/v1.0.0/study-course-manager-windows.zip)
+[下载完整项目（含 Windows 运行环境）](https://github.com/Paisleyyy7/study-course-manager-accessible/archive/refs/heads/main.zip)
 
 ## 在 Windows 上运行
 
@@ -39,7 +39,17 @@ copy data\ai-config.example.json data\ai-config.json
 
 用Tab和Shift+Tab移动焦点，Enter或空格操作按钮。计划标签支持方向键、Home和End。日历支持方向键、Home、End、PageUp和PageDown。Escape关闭日历、弹窗和图片预览。计划和任务更新后保留展开状态，列表与分页更新后恢复焦点。
 
-页面右上角的“无障碍朗读”开关使用浏览器中文语音，可暂停、继续和重读。刷新或转入后台后关闭朗读。语音取决于浏览器和本机资源，已在Windows Edge中使用本地中文语音验证。
+页面右上角有“无障碍朗读”开关。目前没有单独的朗读快捷键，可用键盘操作：
+
+1. 连续按 Tab，选中“无障碍朗读：关”。选中时按钮周围会出现焦点框。
+2. 按 Enter 或空格开启，按钮显示“无障碍朗读：开”，开始朗读当前页面。
+3. 按 Tab 选中“暂停朗读”，按 Enter 暂停。按钮变为“继续朗读”，再按 Enter 继续。
+4. 再按 Tab 选中“重读页面”，按 Enter 从头朗读。
+5. 用 Shift+Tab 返回朗读开关，按 Enter 关闭。
+
+开启后，用 Tab 移到其他控件时会朗读控件名称，并打断正在进行的整页朗读。要听完当前页面，开启后不要继续切换焦点。切换系统内的页面后，会朗读新页面内容。刷新页面或切到其他浏览器标签页后，需要重新开启。
+
+朗读使用浏览器的语音合成接口，优先选择本机中文语音，已在 Windows Edge 中测试。没有声音时，检查系统音量、浏览器标签页是否静音，以及本机是否安装中文语音。
 
 高对比度样式跟随系统强制颜色或增强对比度偏好。普通配色下的部分浅色标签仍有对比度限制。
 
@@ -49,10 +59,10 @@ copy data\ai-config.example.json data\ai-config.json
 runtime\node.exe --test tests\api.test.js tests\demo-data.test.js tests\recent-week.test.js tests\plans.test.js
 ```
 
-已有17项业务回归和90项网页键盘检查通过。AI成功与失败反馈使用受控响应验证。文件上传入口、上传接口和图片预览已验证，工具代选文件不计为原生文件框按键测试。浏览器通知的允许和拒绝分支使用临时权限配置验证。原生文件框及原生通知授权框的完整键盘操作尚缺实际验证证据，未列为通过。
+17项业务测试和90项网页键盘检查通过。AI对话使用模拟响应测试。图片上传和预览已测试，选择文件时由测试工具提供文件。通知功能分别在允许和拒绝权限的环境中测试。Windows文件选择框和浏览器通知授权框还没有完成实际按键测试。
 
 ## 本地数据
 
-运行数据保存在本地 `data` 目录。数据库、上传图片、运行日志和真实AI配置不加入版本控制。项目不包含个人截图、学校信息、学号、本机目录或个人提交邮箱。
+运行数据保存在本地 `data` 目录。数据库、上传图片、运行日志和AI密钥配置不会提交到仓库。
 
 附带的Node.js运行环境许可证见 `runtime/LICENSE-node.txt`。
